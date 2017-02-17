@@ -2,7 +2,18 @@ public class StringTest
 {
 	public static void main(String args[])
 	{
-		System.out.println(replaceSpaces(args[0].toCharArray()));
+		int[][] input=new int[3][3];
+		int counter=1;
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				input[i][j]=counter;
+				counter++;
+			}
+		}
+		rotateBy90(input);
+		//System.out.println(replaceSpaces(args[0].toCharArray()));
 		//System.out.println(checkForAnagrams(args[0], args[1]));
 		//removeDuplicates(args[0]);
 	}
@@ -89,5 +100,26 @@ public class StringTest
 			}
 		}
 		return newInput;
+	}
+
+	public static int[][] rotateBy90(int[][] input)
+	{
+		int n=input.length;
+		for(int layer=0;layer<n/2;layer++)
+		{
+			for(int j=layer;j<n-1-layer;j++)
+			{
+				//save the top
+				int top=input[layer][j];
+				int right=input[layer][n-1-j];
+				int bottom=input[n-1-layer][n-1-j];
+				int left=input[n-1-j][layer];
+				System.out.println(" top: "+top);
+				System.out.println(" right: "+right);
+				System.out.println(" bottom: "+bottom);
+				System.out.println(" left: "+left);
+			}
+		}
+		return input;
 	}
 }
