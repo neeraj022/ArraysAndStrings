@@ -84,12 +84,12 @@ public class Sorting
 			return input;
 		}
 		int pivot=input[inputlength-1];
-		for(int d=0;d<inputlength;d++)
-		{
-			System.out.print(input[d]+" ");
-		}
-		System.out.println();
-		System.out.println("pivot for above array is: "+pivot);
+		// for(int d=0;d<inputlength;d++)
+		// {
+		// 	System.out.print(input[d]+" ");
+		// }
+		//System.out.println();
+		//System.out.println("pivot for above array is: "+pivot);
 		int i=0;
 		int j=inputlength-2;
 		while(i!=j)
@@ -127,16 +127,16 @@ public class Sorting
 				array2[x-i-1]=input[x];
 			}
 		}
-		for(int d=0;d<array1.length;d++)
-		{
-			System.out.print(array1[d]+" ");
-		}
-		System.out.println();
-		for(int d=0;d<array2.length;d++)
-		{
-			System.out.print(array2[d]+" ");
-		}
-		System.out.println();
+		// for(int d=0;d<array1.length;d++)
+		// {
+		// 	System.out.print(array1[d]+" ");
+		// }
+		// System.out.println();
+		// for(int d=0;d<array2.length;d++)
+		// {
+		// 	System.out.print(array2[d]+" ");
+		// }
+		// System.out.println();
 		//sizes will be different
 		array1=quickSort(array1);
 		array2=quickSort(array2);
