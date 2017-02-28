@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class PaintFill
 {
 	public void fill(int[][] input, int i, int j, int colorToBeFilled, int oldColor)
@@ -38,6 +40,83 @@ public class PaintFill
 		
 	}
 
+
+	public int makeChange(int n, int denom)
+	{
+		//denominations are 25, 10, 5, 1
+		int nextDenom=0;
+		switch(denom)
+		{
+			case 25: 
+			{nextDenom=10;
+				break;
+			}
+			case 10: 
+			{nextDenom=5;
+				break;
+			}
+			case 5: 
+			{nextDenom=1;
+				break;
+			}
+			case 1: 
+			{
+				return 1;
+			}
+
+		}
+		int ways=0;
+		for (int i=0;i*denom<=n;i++)
+		{
+			ways=ways+makeChange(n-i*denom, nextDenom);
+		}
+		return ways;
+	}
+
+	int[] columnForRow=new int[8];
+	public void placeTheQueen(int row)
+	{
+		if(row==8)
+		{
+			printBoard();
+			return;
+		}
+		else
+		{
+			for(int i=0;i<8;i++)
+			{
+				columnForRow[row]=i;
+				if(checkMove(row))
+				{
+					placeTheQueen(row+1);
+				}
+			}
+
+		}
+	}
+
+	public boolean checkMove(int row)
+	{
+		for(int i=0;i<row;i++)
+		{
+			int diff=Math.abs(columnForRow[row]-columnForRow[i]);
+			if(diff==0 || diff==Math.abs(row-i))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public void printBoard()
+	{
+		for(int i=0;i<8;i++)
+		{
+			System.out.print(i+","+columnForRow[i]+" ");
+		}
+		System.out.println();
+	}
+
 	public static void main(String args[])
 	{
 		PaintFill obj=new PaintFill();
@@ -56,5 +135,9 @@ public class PaintFill
 			}
 			System.out.println();
 		}
+
+		System.out.println(obj.makeChange(100,5));
+
+		obj.placeTheQueen(0);
 	}
 }
