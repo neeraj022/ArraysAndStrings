@@ -6,3 +6,6 @@
 6) Implement a paint fill feature as used in paint applications <br>
 7) Parenthesis Permutation Problem <br>
 8) String Number Permutation problem <br>
+9) Impelementation to get longest subarray of distinct characters <br>
+10) Implementation to get maximum sum of increasing subsequence <br>
+11) Implementation to reverse a binary number <br>
