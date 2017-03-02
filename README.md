@@ -9,3 +9,4 @@
 9) Impelementation to get longest subarray of distinct characters <br>
 10) Implementation to get maximum sum of increasing subsequence <br>
 11) Implementation to reverse a binary number <br>
+12) Implementation to retrieve next greatest element in a array <br>
